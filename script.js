@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .getElementById("studentTable")
         .getElementsByTagName("tbody")[0];
     const apiBaseUrl = "http://localhost:8080/api/students";
-    function fetchStudents {
+    function fetchStudents() {
         fetch(apiBaseUrl)
             .then((response) => response.json())
             .then((data) => {
