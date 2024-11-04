@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Employee Management System</h1>
+        <div class="form-container">
+            <h2>Add/Update Employee</h2>
+            <form id="employeeForm">
+                <input type="hidden" id="employeeId">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" required>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" required>
+                <label for="email">Email:</label>
+                <input type="text" id="email" required>
+                <button type="submit">Save Employee</button>
+            </form>
+        </div>
+        <div class="employee-list">
+            <h2>Employee List</h2>
+            <table id="employeeTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Employee rows will be added here dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
