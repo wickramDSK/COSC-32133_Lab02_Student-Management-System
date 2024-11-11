@@ -52,8 +52,8 @@ public class StudentController {
     }
 
     // find student by enrollment year
-    @GetMapping("/year of enrollment/{year}")
-    public ResponseEntity<List<Student>> getStudentByYear(@PathVariable("year of enrollment") String yearOfEnrollment) {
+    @GetMapping("/getByYear/{year}")
+    public ResponseEntity<List<Student>> getStudentByYear(@PathVariable("year") String yearOfEnrollment) {
         List<Student> students = studentService.getStudentByYear(yearOfEnrollment);
         return new ResponseEntity<>(students, HttpStatus.OK);
     }

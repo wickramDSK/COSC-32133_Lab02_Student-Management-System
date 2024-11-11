@@ -8,5 +8,6 @@ import com.example.demo.model.Student;
 public interface StudentRepository extends JpaRepository<Student, Long> {
     // CRUD
     // method for find students from enrollment yr
-    List<Student> findStudentByYear(String yearOfEnrollment);
+    List<Student> findStudentByYearOfEnrollment(String yearOfEnrollment);
+
 }
