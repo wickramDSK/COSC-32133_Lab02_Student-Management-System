@@ -70,4 +70,14 @@ public class StudentController {
         // Return the department with 200 OK status
         return new ResponseEntity<>(department, HttpStatus.OK);
     }
+
+    // delete record by year
+    @DeleteMapping("/deleteByYear/{year}")
+    public ResponseEntity<String> deleteStudentsByYear(@PathVariable("year") String year) {
+        studentService.deleteStudentsByYearOfEnrollment(year);
+
+        return new ResponseEntity<>("Students who enrolled in " + year + " have been deleted.", HttpStatus.OK);
+    }
+
+    // DELETE http://localhost:8080/api/students/deleteByYear/2022
 }

@@ -19,4 +19,6 @@ public interface StudentService {
     List<Student> getStudentByYear(String yearOfEnrollment);
 
     String getDepartmentByStudentId(@Param("id") long id);
+
+    void deleteStudentsByYearOfEnrollment(String year);
 }
