@@ -13,4 +13,6 @@ public interface StudentService {
     Student updateStudent(Student student, long id);
 
     void deleteStudent(long id);
+
+    List<Student> getStudentByYear(String yearOfEnrollment);
 }
