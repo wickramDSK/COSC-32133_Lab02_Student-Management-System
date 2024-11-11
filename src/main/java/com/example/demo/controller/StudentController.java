@@ -57,14 +57,17 @@ public class StudentController {
     }
 
     // find department by student id
-    @GetMapping("/{id}/department")
-    public ResponseEntity<String> getStudentDepartment(@PathVariable("id") long id) {
+    @GetMapping("/getDepByID/{id}")
+    public ResponseEntity<String> getDepartmentByStudentId(@PathVariable("id") long id) {
+        // Get the department by student ID using the service
         String department = studentService.getDepartmentByStudentId(id);
 
         if (department == null) {
+            // Return 404 if the student is not found
             return new ResponseEntity<>("Student not found", HttpStatus.NOT_FOUND);
         }
 
+        // Return the department with 200 OK status
         return new ResponseEntity<>(department, HttpStatus.OK);
     }
 }
