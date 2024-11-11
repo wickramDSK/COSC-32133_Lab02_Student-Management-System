@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.model.Student;
 import com.example.demo.service.StudentService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/api/students")
@@ -58,4 +56,15 @@ public class StudentController {
         return new ResponseEntity<>(students, HttpStatus.OK);
     }
 
+    // find department by student id
+    @GetMapping("/{id}/department")
+    public ResponseEntity<String> getStudentDepartment(@PathVariable("id") long id) {
+        String department = studentService.getDepartmentByStudentId(id);
+
+        if (department == null) {
+            return new ResponseEntity<>("Student not found", HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<>(department, HttpStatus.OK);
+    }
 }

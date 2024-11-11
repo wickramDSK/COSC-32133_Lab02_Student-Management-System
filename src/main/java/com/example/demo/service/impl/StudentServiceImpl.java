@@ -69,4 +69,10 @@ public class StudentServiceImpl implements StudentService {
     public List<Student> getStudentByYear(String yearOfEnrollment) {
         return studentRepository.findStudentByYearOfEnrollment(yearOfEnrollment);
     }
+
+    // find department by student id
+    @Override
+    public String getDepartmentByStudentId(long id) {
+        return studentRepository.findDepartmentById(id);
+    }
 }
