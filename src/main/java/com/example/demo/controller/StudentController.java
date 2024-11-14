@@ -75,7 +75,6 @@ public class StudentController {
     @DeleteMapping("/deleteByYear/{year}")
     public ResponseEntity<String> deleteStudentsByYear(@PathVariable("year") String year) {
         studentService.deleteStudentsByYearOfEnrollment(year);
-
         return new ResponseEntity<>("Students who enrolled in " + year + " have been deleted.", HttpStatus.OK);
     }
 
